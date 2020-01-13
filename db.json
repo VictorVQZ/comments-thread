@@ -5,7 +5,7 @@
       "author": "user1@test.com",
       "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu faucibus orci. Duis non consectetur velit, in lacinia augue.",
       "date": "2020-01-01 08:00:00",
-      "commentId": ""
+      "commentId": null
     },
     {
       "id": 2,
