@@ -1,0 +1,24 @@
+.comment{
+	padding: 10px 0 0 10px;
+	text-align:left;
+	border-top: 1px solid #eee;
+	margin-top: 10px;
+}
+
+.replyButton{
+	background: none;
+	border: none;
+	text-decoration: underline;
+}
+.replyButton:hover{
+	cursor: pointer;
+}
+
+.commentDate{
+	font-size: 12px;
+    color: gray;
+}
+
+.commentHeader{
+	margin-bottom: 10px;
+}
