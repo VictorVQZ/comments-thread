@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/comments-thread/static/css/main.ba91e5df.chunk.css",
+    "main.js": "/comments-thread/static/js/main.c21c9b53.chunk.js",
+    "main.js.map": "/comments-thread/static/js/main.c21c9b53.chunk.js.map",
+    "runtime-main.js": "/comments-thread/static/js/runtime-main.87d43a1c.js",
+    "runtime-main.js.map": "/comments-thread/static/js/runtime-main.87d43a1c.js.map",
+    "static/js/2.16851ec1.chunk.js": "/comments-thread/static/js/2.16851ec1.chunk.js",
+    "static/js/2.16851ec1.chunk.js.map": "/comments-thread/static/js/2.16851ec1.chunk.js.map",
+    "index.html": "/comments-thread/index.html",
+    "precache-manifest.6fa6fcb7990ef80c35c118cbba7af2e2.js": "/comments-thread/precache-manifest.6fa6fcb7990ef80c35c118cbba7af2e2.js",
+    "service-worker.js": "/comments-thread/service-worker.js",
+    "static/css/main.ba91e5df.chunk.css.map": "/comments-thread/static/css/main.ba91e5df.chunk.css.map",
+    "static/js/2.16851ec1.chunk.js.LICENSE": "/comments-thread/static/js/2.16851ec1.chunk.js.LICENSE",
+    "static/media/logo.svg": "/comments-thread/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.87d43a1c.js",
+    "static/js/2.16851ec1.chunk.js",
+    "static/css/main.ba91e5df.chunk.css",
+    "static/js/main.c21c9b53.chunk.js"
+  ]
+}
