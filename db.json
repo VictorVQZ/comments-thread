@@ -4,28 +4,28 @@
       "id": 1,
       "author": "user1@test.com",
       "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu faucibus orci. Duis non consectetur velit, in lacinia augue.",
-      "date": "2020-01-01 08:00:00",
+      "date": "2020-01-01T08:00:00",
       "commentId": null
     },
     {
       "id": 2,
       "author": "user2@test.com",
       "comment": "Praesent quis risus orci. Duis id justo vel mi aliquet suscipit blandit non erat.",
-      "date": "2020-01-01 09:00:00",
+      "date": "2020-01-01T09:00:00",
       "commentId": 1
     },
     {
       "id": 3,
       "author": "user3@test.com",
       "comment": "Morbi lorem lorem, pulvinar non lectus ac, gravida sagittis urna. Sed id quam eleifend, egestas nunc at, ornare purus.",
-      "date": "2020-01-01 10:00:00",
+      "date": "2020-01-01T10:00:00",
       "commentId": 2
     },
     {
       "id": 4,
       "author": "user4@test.com",
       "comment": "Sed vitae dignissim sapien. Proin in lobortis nunc.",
-      "date": "2020-01-01 11:00:00",
+      "date": "2020-01-01T11:00:00",
       "commentId": 1
     }
   ]
