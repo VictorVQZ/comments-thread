@@ -10,8 +10,13 @@ const Comment = (props) => {
 	return (
 		<div className={styles.comment}>
 			<div className={styles.commentHeader}>
-				<div>{props.author}</div>
-				<div className={styles.commentDate}>{moment(props.date).format('DD-MM-YYYY HH:mm')}</div>
+				<img 
+					src={process.env.PUBLIC_URL + '/pngfuel.com.png'}
+					className={styles.profileImg} />
+				<div style={{display:'inline-block'}}>
+					<div className={styles.author}>{props.author}</div>
+					<div className={styles.commentDate}>{moment(props.date).format('DD-MM-YYYY HH:mm')}</div>
+				</div>				
 			</div>
 			<div className="body">
 				{props.comment}

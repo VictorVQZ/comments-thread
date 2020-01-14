@@ -22,3 +22,14 @@
 .commentHeader{
 	margin-bottom: 10px;
 }
+
+.profileImg{
+	height: 30px;
+	width: auto;
+	vertical-align: top;
+	margin-right: 5px;
+}
+
+.author{
+	font-size: 14px;
+}
