@@ -4,11 +4,24 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from './store/reducer';
 
-const store = createStore(reducer);
+import thunk from 'redux-thunk';
+
+const logger = store => {
+    return next => {
+        return action => {
+            console.log('[Middleware] Dispatching', action);
+            const result = next(action);
+            console.log('[Middleware] next state', store.getState());
+            return result;
+        }
+    }
+};
+
+const store = createStore(reducer, applyMiddleware(logger, thunk));
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 

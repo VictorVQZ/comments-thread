@@ -9,11 +9,12 @@ import AddComment from '../components/AddComment/AddComment';
 class Comments extends Component{
 
 	componentDidMount(){
-		axios.get( '/comments' )
+		/*axios.get( '/comments' )
             .then( response => {
                 const comments = response.data;
                 this.props.onFetchData(comments);
-            });
+            });*/
+        this.props.onComponentMount();
 	}
 
 	publishCommentHandler(commentText, commentId){
@@ -89,6 +90,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         onFetchData: (comments) => dispatch({type: actionTypes.FETCH_DATA, comments: comments}),
+        onComponentMount: () => dispatch(actionTypes.getData()),
         onAddedComment: (comment, commentId) => dispatch({type: actionTypes.ADD_COMMENT, comment: comment, commentId: commentId})
     }
 };
