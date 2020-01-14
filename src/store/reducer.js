@@ -12,10 +12,15 @@ const reducer = ( state = initialState, action ) => {
                 ...state,
                 comments: action.comments
             };
-        case actionTypes.ADD_COMMENT:            
+        case actionTypes.ADD_COMMENT:
+            // Prevent duplicated ids due to storage not persistent
+            const comment = action.comment;
+            if(state.comments.some(e => e.id === comment.id)){
+                comment.id = new Date().getTime();
+            }
             return {
                 ...state,
-                comments: state.comments.concat( action.comment )
+                comments: state.comments.concat( comment )
             };
         default:
             return state;

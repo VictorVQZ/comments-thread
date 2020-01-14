@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './Comment.module.css';
 import Replies from './Replies';
 import AddComment from '../AddComment/AddComment';
+import moment from 'moment';
 
 const Comment = (props) => {
 	const [reply, setReplyState] = useState(false);
@@ -10,7 +11,7 @@ const Comment = (props) => {
 		<div className={styles.comment}>
 			<div className={styles.commentHeader}>
 				<div>{props.author}</div>
-				<div className={styles.commentDate}>{props.date}</div>
+				<div className={styles.commentDate}>{moment(props.date).format('DD-MM-YYYY HH:mm')}</div>
 			</div>
 			<div className="body">
 				{props.comment}

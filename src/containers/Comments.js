@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actionTypes from '../store/actions';
-import axios from '../axios';
+import moment from 'moment';
 
 import Comment from '../components/Comment/Comment';
 import AddComment from '../components/AddComment/AddComment';
@@ -9,40 +9,18 @@ import AddComment from '../components/AddComment/AddComment';
 class Comments extends Component{
 
 	componentDidMount(){
-		/*axios.get( '/comments' )
-            .then( response => {
-                const comments = response.data;
-                this.props.onFetchData(comments);
-            });*/
         this.props.onComponentMount();
 	}
 
 	publishCommentHandler(commentText, commentId){
-		const date = new Date();
-
 		const newComment = {
 			"author": "user@test.com",
 	      	"comment": commentText,
-	      	"date": date.getFullYear() 
-		      	+ '-' + (date.getMonth() + 1) 
-		      	+ '-' + date.getDate() 
-		      	+ 'T' + date.getHours() 
-		      	+ ':' + date.getMinutes()
-		      	+ ':' + date.getSeconds(),
+	      	"date": moment().format('YYYY-MM-DDTHH:mm:ss'),
 	      	"commentId": commentId
 		};
 
-		axios.post('/comments', newComment)
-			.then(response => {
-                const comment = response.data;
-
-                // Prevent duplicated ids due to storage not persistent
-                if(this.props.comments.some(e => e.id === comment.id)){
-                	comment.id = new Date().getTime();
-                }
-
-                this.props.onAddedComment(comment);
-            });
+        this.props.onAddedComment(newComment);
 	}
 
 	findReplies(commentId){
@@ -58,7 +36,7 @@ class Comments extends Component{
 	render(){
 		var comments = this.findReplies(null);		
 		return (
-			<div style={{paddingRight: '10px'}}>
+			<div style={{paddingRight: '10px', paddingBottom: '10px'}}>
 				<h4>Add comment</h4>
 				<AddComment 
 					commentId={null}
@@ -77,8 +55,7 @@ class Comments extends Component{
 			}
 			</div>
 		);
-	}
-	
+	}	
 }
 
 const mapStateToProps = state => {
@@ -89,9 +66,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onFetchData: (comments) => dispatch({type: actionTypes.FETCH_DATA, comments: comments}),
         onComponentMount: () => dispatch(actionTypes.getData()),
-        onAddedComment: (comment, commentId) => dispatch({type: actionTypes.ADD_COMMENT, comment: comment, commentId: commentId})
+        onAddedComment: (comment) => dispatch(actionTypes.addComment(comment))
     }
 };
 
