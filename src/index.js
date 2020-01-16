@@ -10,18 +10,7 @@ import reducer from './store/reducer';
 
 import thunk from 'redux-thunk';
 
-const logger = store => {
-    return next => {
-        return action => {
-            console.log('[Middleware] Dispatching', action);
-            const result = next(action);
-            console.log('[Middleware] next state', store.getState());
-            return result;
-        }
-    }
-};
-
-const store = createStore(reducer, applyMiddleware(logger, thunk));
+const store = createStore(reducer, applyMiddleware(thunk));
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 

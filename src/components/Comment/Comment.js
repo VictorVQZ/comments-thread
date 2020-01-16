@@ -12,7 +12,8 @@ const Comment = (props) => {
 			<div className={styles.commentHeader}>
 				<img 
 					src={process.env.PUBLIC_URL + '/pngfuel.com.png'}
-					className={styles.profileImg} />
+					className={styles.profileImg}
+					alt="profileImg" />
 				<div style={{display:'inline-block'}}>
 					<div className={styles.author}>{props.author}</div>
 					<div className={styles.commentDate}>{moment(props.date).format('DD-MM-YYYY HH:mm')}</div>
